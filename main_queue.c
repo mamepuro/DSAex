@@ -12,7 +12,7 @@ int main(void) {
   printf("%d\n", dequeue(test_q));
   printf("%d\n", dequeue(test_q));
 
-  delete_queue(test_q);
+  //delete_queue(test_q);
 
   return EXIT_SUCCESS;
 }

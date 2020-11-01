@@ -6,6 +6,7 @@ Cell *head = NULL;
 
 void insert_cell(Cell *p, int d) {
     Cell *new_cell = (Cell*)malloc(sizeof(Cell));
+
     new_cell -> data = d;
     new_cell -> next = p->next;
     p->next = new_cell;
