@@ -24,9 +24,7 @@ void enqueue(Queue *q, int d)
     else
     {
         q ->buffer[q->rear] = d;
-        printf("buufer[%d] is %d",q->rear, q->buffer[q->rear]);
         q ->rear = (q->rear+1) % (q->length);
-        printf("rear is %d",q->rear);
     }
 }
 int dequeue(Queue *q)
@@ -57,5 +55,5 @@ void display(Queue *q)
 void delete_queue(Queue *q)
 {
     free(q);
-    printf("Queue deleted!");
+    printf("Queue deleted!\n");
 }

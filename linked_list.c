@@ -27,8 +27,8 @@ void delete_cell(Cell *p) {
 
 void delete_cell_top(void) {
     Cell *head_cell = head;
+    free(head);
     head = head_cell->next;
-    free(head_cell);
 }
 
 void display(void) {
