@@ -8,3 +8,4 @@ open_addressing: open_addressing.o main_open_addressing.o
 linear_probing: linear_probing.o main_linear_probing.o
 double_hashing: double_hashing.o main_double_hashing.o
 binarytree: binarytree.o main_binarytree.o
+binarysearchtree: binarysearchtree.o main_binarysearchtree.o

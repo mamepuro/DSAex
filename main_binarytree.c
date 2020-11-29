@@ -4,7 +4,6 @@
 
 int main(void) {
   // Build a binary tree
-  printf("unchi");
   Node *f = create_tree("F", NULL, NULL);
   Node *i = create_tree("I", NULL, NULL);
   Node *d = create_tree("D", f, NULL);
