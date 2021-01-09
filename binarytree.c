@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "binarytree.h"
 
+//キューを作成する
 Queue *create_queue(int len)
 {
     Queue *new_queue = (Queue*)malloc(sizeof(Queue));
@@ -117,32 +118,46 @@ void display(Node *n)
 
 void breadth_first_search(Node *n)
 {
+    //サイズ100のキューを作成する
     Queue *tree_queue = create_queue(100);
+    //nをエンキューする
     enqueue(tree_queue, n);
+    //キューが空でない限りループさせる
     while(tree_queue->count != 0)
     {
+        //デキューする
         Node *node = dequeue(tree_queue);
         printf("%s ", node->label);
+        //左に子があれば左の子をエンキューする
         if(node->left != NULL)
         {
             enqueue(tree_queue, node->left);
         }
+        //右に子があれば右の子をエンキューする
         if(node->right !=NULL)
         {
             enqueue(tree_queue, node->right);
         }
     }
+    //作成したキューを削除する
     delete_queue(tree_queue);
 }
 
+
+//再帰処理を用いて高さを計算する
+//再帰のロジックとしては、「引数nのノードの左右それぞれの部分木のうち、高さが高いほうの高さを返す」を採用している
 int height(Node *n)
 {
+    //ノードがなければ高さ0を返す
     if(n == NULL)
     {
         return 0;
     }
+    //l_countはNode nの左部分木の高さを表す。
     int l_count = 1 + height(n->left);
+    //r_countはNode nの右部分木の高さを表す。
     int r_count = 1 + height(n->right);
+    //左右の部分木のうち高いほうの高さを返す
     if(l_count > r_count)
     {
         return l_count;
@@ -155,13 +170,18 @@ int height(Node *n)
 
 void delete_tree(Node *n)
 {
+    //左に子があれば、左の部分木を削除するために再帰呼び出しをする
     if(n->left != NULL)
     {
         delete_tree(n->left);
+        n->left = NULL;
     }
+    //右に子があれば、右の部分木を削除するために再帰呼び出しをする
     if(n->right != NULL)
     {
         delete_tree(n->right);
+        n->right = NULL;
     }
+    //メモリを開放する
     free(n);
 }

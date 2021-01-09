@@ -39,10 +39,12 @@ bool search_bst(Node *root, int d)
         {
             return true;
         }
+        //左のノードに進む
         else if(p->value > d)
         {
             p = p->left;
         }
+        //右のノードに進む
         else
         {
             p = p->right;
@@ -53,6 +55,7 @@ bool search_bst(Node *root, int d)
 
 void insert_bst(Node **root, int d)
 {
+    //rootがNULLならノードを作成する
     if(*root == NULL)
     {
         *root = create_node(d);
@@ -66,11 +69,13 @@ void insert_bst(Node **root, int d)
     //ラベルとしてdを持たないノードがないので、再帰処理を用いて挿入すべき場所までノードを移動する。
     else
     {
+        //左の子にすすむ
         if((*root)->value > d)
         {
             insert_bst(&((*root)->left), d);
             return;
         }
+        //右の子に進む
         else
         {
             insert_bst(&((*root)->right), d);

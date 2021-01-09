@@ -9,3 +9,5 @@ linear_probing: linear_probing.o main_linear_probing.o
 double_hashing: double_hashing.o main_double_hashing.o
 binarytree: binarytree.o main_binarytree.o
 binarysearchtree: binarysearchtree.o main_binarysearchtree.o
+bst_advanced: bst_advanced.o main_bst_advanced.o
+sort_collection: sort_collection.o main_sort_collection.o
