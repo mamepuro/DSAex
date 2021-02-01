@@ -11,3 +11,8 @@ binarytree: binarytree.o main_binarytree.o
 binarysearchtree: binarysearchtree.o main_binarysearchtree.o
 bst_advanced: bst_advanced.o main_bst_advanced.o
 sort_collection: sort_collection.o main_sort_collection.o
+main_dijkstra: dijkstra.o main_dijkstra.o
+main_floyd: floyd.o main_floyd.o
+mainNaive: cmp.o naive.o readFile.o
+testcompnext: cmp.o compnext.o readFile.o
+mainkmp: cmp.o kmp.o compnext.o readFile.o
